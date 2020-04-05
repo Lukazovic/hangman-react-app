@@ -7,7 +7,6 @@
   <a href="#rocket-built-with">Built With</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-how-to-contribute">How to Contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#author">Author</a>
 </p>
 
@@ -29,10 +28,6 @@ The hangman game is a game where the players has to guess a word. It a simple ga
 Then merge your pull request, you can now delete your branch
 
 > **Tip:** A simple and easy way to starting contributing with this project is by adding some words to the game. The file is at `./src/words.js`
-
-## :memo: License
-
-This project is under MIT license. See [LICENSE](LICENSE.md) file for further details.
 
 ## Author
 
