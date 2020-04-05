@@ -10,7 +10,6 @@ import img5 from "./assets/images/5.jpg";
 import img6 from "./assets/images/6.jpg";
 
 class Hangman extends Component {
-  /** by default, allow 6 guesses and use provided gallows images. */
   static defaultProps = {
     maxWrong: 6,
     images: [img0, img1, img2, img3, img4, img5, img6],
@@ -27,19 +26,12 @@ class Hangman extends Component {
     this.setState({ nWrong: 0, guessed: new Set(), answer: randomWord() });
   }
 
-  /** guessedWord: show current-state of word:
-    if guessed letters are {a,p,e}, show "app_e" for "apple"
-  */
   guessedWord() {
     return this.state.answer.word
       .split("")
       .map(ltr => (this.state.guessed.has(ltr) ? ltr : "_"));
   }
 
-  /** handleGuest: handle a guessed letter:
-    - add to guessed letters
-    - if not in answer, increase number-wrong guesses
-  */
   handleGuess(evt) {
     let ltr = evt.target.value;
     this.setState(st => ({
@@ -48,7 +40,6 @@ class Hangman extends Component {
     }));
   }
 
-  /** generateButtons: return array of letter buttons to render */
   generateButtons() {
     return "abcdefghijklmnopqrstuvwxyz".split("").map(ltr => (
       <button
@@ -62,7 +53,6 @@ class Hangman extends Component {
     ));
   }
 
-  /** render: render game */
   render() {
     const gameOver = this.state.nWrong >= this.props.maxWrong;
     const isWinner = this.guessedWord().join("") === this.state.answer.word;
