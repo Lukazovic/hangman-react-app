@@ -31,7 +31,7 @@ class Hangman extends Component {
     if guessed letters are {a,p,e}, show "app_e" for "apple"
   */
   guessedWord() {
-    return this.state.answer
+    return this.state.answer.word
       .split("")
       .map(ltr => (this.state.guessed.has(ltr) ? ltr : "_"));
   }
@@ -44,7 +44,7 @@ class Hangman extends Component {
     let ltr = evt.target.value;
     this.setState(st => ({
       guessed: st.guessed.add(ltr),
-      nWrong: st.nWrong + (st.answer.includes(ltr) ? 0 : 1),
+      nWrong: st.nWrong + (st.answer.word.includes(ltr) ? 0 : 1),
     }));
   }
 
@@ -65,7 +65,7 @@ class Hangman extends Component {
   /** render: render game */
   render() {
     const gameOver = this.state.nWrong >= this.props.maxWrong;
-    const isWinner = this.guessedWord().join("") === this.state.answer;
+    const isWinner = this.guessedWord().join("") === this.state.answer.word;
     const altText = !gameOver
       ? `${this.state.nWrong} out of ${this.props.maxWrong} guesses`
       : "Game Over!";
@@ -77,8 +77,9 @@ class Hangman extends Component {
         <h1>Hangman</h1>
         <img src={this.props.images[this.state.nWrong]} alt={altText} />
         <p>Number of wrong guesses: {this.state.nWrong}</p>
+        <p>Tip: {this.state.answer.tip}</p>
         <p className="Hangman-word">
-          {!gameOver ? this.guessedWord() : this.state.answer}
+          {!gameOver ? this.guessedWord() : this.state.answer.word}
         </p>
         <p className="Hangman-btns">{gameState}</p>
         <button onClick={this.reset} id="reset">
