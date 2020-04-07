@@ -1,6 +1,6 @@
 <h1 align="center">Hangman Game</h1>
 <h4 align="center">
-  <img src="./public/assets/images/Hangman-Screenshot.png" width="250px" /><br>
+  <img src="./public/assets/images/Hangman-Screenshot.png" /><br>
 </h4>
 
 <p align="center">
