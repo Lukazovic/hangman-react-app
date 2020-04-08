@@ -30,7 +30,7 @@ It will open a browser page (if it doesn't, go to [http://localhost:3000](http:/
 
 ## 🤔 How to Contribute
 
-- Clone the project: `git clone https://github.com/Lukazovic/hangman-react-app.git`;
+- Fork this repository;
 - Create your branch with your feature: `git checkout -b my-feature`;
 - Commit your feature: `git commit -m 'feat: My new feature'`;
 - Push to your branch: `git push origin my-feature`.
